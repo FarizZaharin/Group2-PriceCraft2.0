@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.2s ease-out;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white;
+  }
+
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  .print-view {
+    position: static;
+    overflow: visible;
+  }
+
+  .print-content {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .print-table tr {
+    page-break-inside: avoid;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 15mm 12mm;
+  }
+}
